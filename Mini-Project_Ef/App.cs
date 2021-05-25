@@ -18,10 +18,12 @@ namespace Mini_Project_Ef
         string splitCurr;
         public void Run()
         {
-            var companyAssets = db.CompanyAssetsS;
-            if (companyAssets == null)
+            using (var dbE = new CompanyAssetsContext())
             {
-                Functions.AddSomeItems();
+                if (!dbE.CompanyAssetsS.Any())
+                {
+                    Functions.AddSomeItems();
+                }
             }
 
             RunConvertion();
@@ -226,6 +228,7 @@ namespace Mini_Project_Ef
             List<CompanyAsset> sortedCompanyAsset = db.CompanyAssetsS.
             OrderBy(companyAsset => companyAsset.Office).
                ThenBy(companyAsset => companyAsset.PurchaseDate).ToList();
+
             Console.WriteLine("Office".PadRight(15) + "Id".PadRight(15) + "Model Name".PadRight(15) + "Price".PadRight(20) + "Purchase Date".PadRight(10));
             Console.WriteLine("===========================================================================================");
             Console.WriteLine();
