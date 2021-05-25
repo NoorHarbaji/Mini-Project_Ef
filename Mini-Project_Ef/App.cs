@@ -25,11 +25,8 @@ namespace Mini_Project_Ef
                     Functions.AddSomeItems();
                 }
             }
-
             RunConvertion();
-            Console.WriteLine();
             ShowCompaniesAsset();
-            WriteToFile();
 
             MainMenu();
         }

@@ -22,7 +22,6 @@ namespace Mini_Project_Ef
 
         public static void AddSomeItems()
         {
-
             CompanyAsset companyAssetA = new CompanyAsset(400, new DateTime(2018, 8, 30), "Iphone", "china", "phone");
             CompanyAsset companyAsset1 = new CompanyAsset(400, new DateTime(2018, 8, 30), "Iphone", "china", "phone");
             
