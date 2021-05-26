@@ -7,8 +7,10 @@ namespace Mini_Project_Ef
     {
         static void Main(string[] args)
         {
-            var app = new App();
-            app.Run();
+            //var app = new App();
+            //app.Run();
+            var provider = new ProviderTest();
+            provider.Test();
 
         }
     }
